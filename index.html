@@ -8,7 +8,7 @@
 <meta name="viewport"
 content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-<title>Quote Plywood Khổ Nhỏ</title>
+<title>Quote Khổ Thiếu +0.5mm</title>
 
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-192.png">
@@ -28,17 +28,12 @@ padding:10px;
 }
 
 .app{
-
 width:100%;
 max-width:360px;
-
 background:white;
 padding:14px;
-
 border-radius:10px;
-
 box-shadow:0 3px 10px rgba(0,0,0,.12);
-
 }
 
 h3{
@@ -48,49 +43,32 @@ font-size:17px;
 }
 
 .row{
-
 display:flex;
 justify-content:space-between;
 align-items:center;
-
 margin-bottom:4px;
-
 font-size:14px;
-
 }
 
 .row input{
-
 width:85px;
-
 padding:4px;
-
 font-size:16px;
-
 border:1px solid #ccc;
-
 border-radius:4px;
-
 text-align:right;
-
 }
 
 .result{
-
 margin-top:8px;
-
 font-size:14px;
 font-weight:600;
-
 }
 
 .result div{
-
 display:flex;
 justify-content:space-between;
-
 margin:2px 0;
-
 }
 
 .blue{color:#2563eb;}
@@ -104,9 +82,9 @@ margin:2px 0;
 
 <div class="app">
 
-<h3>Quote Plywood Khổ Nhỏ</h3>
+<h3>Quote Khổ Thiếu +0.5mm</h3>
 
-<div class="row">Thickness(mm)<input id="thickness"></div>
+<div class="row">Thickness Buy(mm)<input id="thickness"></div>
 
 <div class="row">Width(mm)<input id="width"></div>
 <div class="row">Length(mm)<input id="length"></div>
@@ -175,7 +153,9 @@ e.target.value=Number(v).toLocaleString("en-US")
 
 function calc(){
 
-let thickness=number("thickness")
+let thicknessBuy=number("thickness")
+let thicknessSell=thicknessBuy+0.5
+
 let width=number("width")
 let length=number("length")
 
@@ -193,9 +173,9 @@ let cfr=number("cfr")
 
 let pcs=bundle*pcsBundle
 
-let cbmBuyPc=(thickness/1000)*(width/1000)*(length/1000)
+let cbmBuyPc=(thicknessBuy/1000)*(width/1000)*(length/1000)
 
-let cbmSellPc=((thickness+0.5)/1000)*(width/1000)*(length/1000)
+let cbmSellPc=(thicknessSell/1000)*(width/1000)*(length/1000)
 
 let cbmBuy=pcs*cbmBuyPc
 
